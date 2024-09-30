@@ -1,0 +1,65 @@
+details:
+Hierarchical Sequential Sampling Model
+Model: ddm
+
+Response variable: rt,response
+Likelihood: analytical
+Observations: 1414
+
+Parameters:
+
+v:
+    Prior: Normal(mu: 0.0, sigma: 2.0)
+    Explicit bounds: (-inf, inf)
+a:
+    Formula: a ~ (1|subject) + off_norm + emot_idx
+    Priors:
+        a_Intercept ~ HalfNormal(sigma: 2.0)
+        a_off_norm ~ Normal(mu: 0.0, sigma: 2.0)
+        a_emot_idx ~ Normal(mu: 0.0, sigma: 2.0)
+        a_1|subject ~ Normal(mu: 0.0, sigma: HalfNormal(sigma: 2.5))
+    Link: inverse_squared
+    Explicit bounds: (0.0, inf)
+z:
+    Prior: Uniform(lower: 0.0, upper: 1.0)
+    Explicit bounds: (0.0, 1.0)
+t:
+    Prior: HalfNormal(sigma: 2.0, initval: 0.10000000149011612)
+    Explicit bounds: (0.0, inf)
+
+Lapse probability: 0.05
+Lapse distribution: Uniform(lower: 0.0, upper: 10.0)
+
+summary:
+                    mean     sd  hdi_3%  hdi_97%  mcse_mean  mcse_sd  \
+v                  0.260  0.057   0.157    0.364      0.005    0.004   
+a_off_norm        -0.034  0.149  -0.314    0.245      0.015    0.011   
+a_emot_idx[1.0]   -0.151  0.105  -0.335    0.045      0.009    0.006   
+a_emot_idx[2.0]   -0.019  0.109  -0.202    0.171      0.010    0.007   
+z                  0.514  0.011   0.493    0.533      0.001    0.001   
+t                  0.303  0.001   0.302    0.303      0.000    0.000   
+a_Intercept        2.273  0.761   0.768    3.585      0.121    0.086   
+a_1|subject_sigma  1.548  0.722   0.536    2.817      0.078    0.055   
+a_1|subject[0]     0.692  0.791  -0.677    2.250      0.125    0.089   
+a_1|subject[1]    -1.056  0.779  -2.294    0.678      0.125    0.089   
+a_1|subject[2]     1.438  0.792   0.232    3.245      0.127    0.091   
+a_1|subject[3]    -0.202  0.785  -1.728    1.254      0.126    0.090   
+
+                   ess_bulk  ess_tail  r_hat  
+v                     113.0      55.0    NaN  
+a_off_norm             97.0     264.0    NaN  
+a_emot_idx[1.0]       149.0     238.0    NaN  
+a_emot_idx[2.0]       130.0     409.0    NaN  
+z                     183.0     193.0    NaN  
+t                     147.0     143.0    NaN  
+a_Intercept            39.0      47.0    NaN  
+a_1|subject_sigma      81.0     110.0    NaN  
+a_1|subject[0]         39.0      51.0    NaN  
+a_1|subject[1]         38.0      44.0    NaN  
+a_1|subject[2]         39.0      54.0    NaN  
+a_1|subject[3]         38.0      54.0    NaN 
+
+fit:
+Estimate       SE
+elpd_waic  -893.06    28.02
+p_waic        4.71        -
