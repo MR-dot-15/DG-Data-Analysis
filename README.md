@@ -8,3 +8,7 @@ Mukhopadhyay, R., Chatterjee, S., & Das, K. (2024). Fairness, not Emotion, Drive
 <sup>*</sup> mukh.rudra@gmail.com (DBS, IISER Kolkata) <br>
 <sup>#</sup> (INS) <br>
 <sup>+</sup> koel.das@iiserkol.ac.in (DMS, IISER Kolkata)
+
+<img src="https://github.com/MR-dot-15/DG-Data-Analysis/blob/main/sub_clust_horz.gif" width="700" height="500"/>
+
+*Figure: The Rationality Triangle, prior to clustering! For further details, refer to the article mentioned above.*
